@@ -2,6 +2,8 @@ package monster.controller;
 
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
+import monster.view.MonsterDisplay;
+
 
 public class MonsterController
 {
@@ -74,6 +76,11 @@ public class MonsterController
 			currentMonster.setTentacleAmount(currentMonster.getTentacleAmount() - tentacleEat);
 			System.out.println("Aight, because you ate " + tentacleEat + " I now have " + currentMonster.getTentacleAmount() + " tentacles!");
 		}
+		
+//		popup.displayText("Hi there ready to play???");
+//		String answer = popup.getResponse("What is the air spped of a cocnut laden swallow?");
+//		System.out.println(answer);
+		
 		myScanner.close();
 	}
 }	
