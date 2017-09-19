@@ -28,6 +28,28 @@ public class MonsterController
 		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
 		System.out.println(currentMonster);
 		
+		System.out.println("How many arms do you want to eat? I have " + currentMonster.getArmCount() + " right now!");
+		//consumed = myScanner.nextInt();
+		int armEat = myScanner.nextInt();
+		
+		if(armEat == 0)
+		{
+			System.out.println("Not hungry? Why? Don't you want to eat me?Aw well, looks like you get to starve.");
+		}
+		else if(armEat < 0)
+		{
+			System.out.println("I guess physics and math is hard for you, huh?");
+		}
+		else if (armEat > currentMonster.getArmCount())
+		{
+			System.out.println("You can't eat more arms than I have!");
+		}
+		else
+		{
+			System.out.println("Ok, now I have " + currentMonster.getArmCount());
+		}
+		
+		
 		myScanner.close();
 	}
 }	
