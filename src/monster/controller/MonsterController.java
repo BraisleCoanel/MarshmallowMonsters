@@ -10,7 +10,7 @@ public class MonsterController
 	{
 		MarshmallowMonster basic = new MarshmallowMonster();
 		System.out.println(basic);
-		MarshmallowMonster endon = new MarshmallowMonster("Endon", 3, 2, 6, true);
+		MarshmallowMonster endon = new MarshmallowMonster("Endon", 3, 2, 999999.999, true);
 		System.out.println(endon); 
 		System.out.println("I am hungry, I'm go eat one of Endon's arms");
 		endon.setArmCount(endon.getArmCount() - 1);
@@ -51,7 +51,7 @@ public class MonsterController
 		
 		System.out.println("I have " + currentMonster.getTentacleAmount() + " right now, how many do you want?");
 		//consumed = myScanner.nextInt();
-		int tentacleEat = myScanner.nextInt();
+		double tentacleEat = myScanner.nextDouble();
 		
 		if(tentacleEat == 0)
 		{
@@ -60,6 +60,10 @@ public class MonsterController
 		else if(tentacleEat < 0)
 		{
 			System.out.println("You can't eat negative tentacles silly");
+		}
+		else if(tentacleEat == currentMonster.getTentacleAmount())
+		{
+			System.out.println("YOU ATE ALL OF MY TENTACLES!!!");
 		}
 		else if(tentacleEat > currentMonster.getTentacleAmount())
 		{
