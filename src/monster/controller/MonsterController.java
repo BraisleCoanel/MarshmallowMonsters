@@ -67,7 +67,12 @@ public class MonsterController
 
 		System.out.println("I have " + currentMonster.getTentacleAmount() + " right now, how many do you want?");
 		// consumed = myScanner.nextInt();
-		double tentacleEat = myScanner.nextDouble();
+		double tentacleEat = 0.0;
+		String tentacleResponse = popup.getResponse("");
+		if(isValidDouble(tentacleResponse))
+		{
+			tentacleEat = Double.parseDouble(tentacleResponse);
+		}
 
 		if (tentacleEat == 0)
 		{
@@ -114,5 +119,19 @@ public class MonsterController
 		}
 		return valid;
 	}
-
+	private boolean isValidDouble(String sampleDouble)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Double.parseDouble(sampleDouble);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("You need to type in a double -" + sampleDouble + " is not a valid answer.");
+		}
+		return valid;
+	}
 }
