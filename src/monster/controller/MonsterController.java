@@ -2,21 +2,27 @@ package monster.controller;
 
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
+
 import monster.view.MonsterDisplay;
 
 
 public class MonsterController
 {
-
+	private MonsterDisplay popup;
+	
 	public void start()
 	{
 		MarshmallowMonster basic = new MarshmallowMonster();
-		System.out.println(basic);
-		MarshmallowMonster endon = new MarshmallowMonster("Endon", 3, 2, 999999.999, true);
-		System.out.println(endon); 
-		System.out.println("I am hungry, I'm go eat one of Endon's arms");
+//		System.out.println(basic);
+		popup.displayText(basic.toString());
+		MarshmallowMonster endon = new MarshmallowMonster("Endon", 3, 2, .23, true);
+//		System.out.println(endon); 
+		popup.displayText(endon.toString());
+//		System.out.println("I am hungry, I'm go eat one of Endon's arms");
+		popup.displayText("I am hungry, I'm go eat one of Endon's arms");
 		endon.setArmCount(endon.getArmCount() - 1);
-		System.out.println(endon);
+//		System.out.println(endon);
+		popup.displayText(endon.toString());
 		
 		interactWithMonster(endon);
 		
@@ -77,9 +83,9 @@ public class MonsterController
 			System.out.println("Aight, because you ate " + tentacleEat + " I now have " + currentMonster.getTentacleAmount() + " tentacles!");
 		}
 		
-//		popup.displayText("Hi there ready to play???");
-//		String answer = popup.getResponse("What is the air spped of a cocnut laden swallow?");
-//		System.out.println(answer);
+		popup.displayText("Hi there ready to play???");
+		String answer = popup.getResponse("What is the air spped of a cocnut laden swallow?");
+		System.out.println(answer);
 		
 		myScanner.close();
 	}
