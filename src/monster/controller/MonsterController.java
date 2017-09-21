@@ -9,6 +9,10 @@ public class MonsterController
 {
 	private MonsterDisplay popup;
 
+	public MonsterController()
+	{
+		popup = new MonsterDisplay();
+	}
 	public void start()
 	{
 		MarshmallowMonster basic = new MarshmallowMonster();
@@ -134,4 +138,22 @@ public class MonsterController
 		}
 		return valid;
 	}
+	private boolean isValidBoolean(String sampleBoolean)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Boolean.parseBoolean(sampleBoolean);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("Type ina boolean value, " + sampleBoolean + " does not count.");
+		}
+		return valid;
+	}
+
+
+
 }
