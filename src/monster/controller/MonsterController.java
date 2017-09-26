@@ -16,17 +16,17 @@ public class MonsterController
 	
 	public void start()
 	{
-		int count = 0;
-		while(count < 10)
-		{
-			popup.displayText("am I not friggen coolio!");
+//		int count = 0;
+//		while(count < 10)
+//		{
+//			popup.displayText("am I not friggen coolio!");
 //			count+=2;
-		}
+//		}
 		
-		for(int loop = 0; loop < 10; loop += 1)
-		{
-			popup.displayText("Thiss a loop # " + (loop + 1) + " of ten!!1!!1");
-		}
+//		for(int loop = 0; loop < 10; loop += 1)
+//		{
+//			popup.displayText("Thiss a loop # " + (loop + 1) + " of ten!!1!!1");
+//		}
 		
 		
 		
@@ -39,7 +39,7 @@ public class MonsterController
 		popup.displayText(endon.toString());
 		// System.out.println("I am hungry, I'm go eat one of Endon's arms");
 		popup.displayText("I am hungry, I'm go eat one of Endon's arms");
-		endon.setArmCount(endon.getArmCount() - 1);
+		endon.setArmCount(endon.getArmCount() - 1);	
 		// System.out.println(endon);
 		popup.displayText(endon.toString());
 
@@ -52,7 +52,7 @@ public class MonsterController
 		Scanner myScanner = new Scanner(System.in);
 		// System.out.println(currentMonster.getName() + " wants to know how many eyes you want to eat, type how many you want to eat");
 		int consumed = 0;
-		String response = popup.getResponse(currentMonster.getName() + " wants to know how many eyes you want to eat, type how many you want to eat");
+		String response = popup.getResponse(currentMonster.getName() + " wants to know how 			many eyes you want to eat, type how many you want to eat");
 		
 		while(!isValidInteger(response))
 		{
@@ -72,8 +72,15 @@ public class MonsterController
 
 		System.out.println("How many arms do you want to eat? I have " + currentMonster.getArmCount() + " right now!");
 		// consumed = myScanner.nextInt();
-		int armEat = myScanner.nextInt();
-
+//		int armEat = myScanner.nextInt();
+		
+		String answer = popup.getResponse("How many arms do you want to eat?");
+		while(!isValidInteger(answer))
+		{
+			popup.displayText("Uhh no, type in an integer.");
+		}
+		int armEat = Integer.parseInt(response);
+		
 		if (armEat == 0)
 		{
 			System.out.println("Not hungry? Why? Don't you want to eat me?Aw well, looks like you get to starve.");
@@ -123,8 +130,8 @@ public class MonsterController
 		}
 
 		popup.displayText("Hi there ready to play???");
-		String answer = popup.getResponse("What is the air spped of a cocnut laden swallow?");
-		System.out.println(answer);
+		String newAnswer = popup.getResponse("What is the air spped of a cocnut laden swallow?");
+		System.out.println(newAnswer);
 
 		myScanner.close();
 	}
