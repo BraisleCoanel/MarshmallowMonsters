@@ -17,15 +17,15 @@ public class MonsterController
 	public void start()
 	{
 		int count = 0;
-		while(count < 0)
+		while(count < 10)
 		{
 			popup.displayText("am I not friggen coolio!");
-			count+=2;
+//			count+=2;
 		}
 		
 		for(int loop = 0; loop < 10; loop += 1)
 		{
-			
+			popup.displayText("Thiss a loop # " + (loop + 1) + " of ten!!1!!1");
 		}
 		
 		
@@ -50,15 +50,21 @@ public class MonsterController
 	private void interactWithMonster(MarshmallowMonster currentMonster)
 	{
 		Scanner myScanner = new Scanner(System.in);
-		// System.out.println(currentMonster.getName() + " wants to know how many eyes you want to eat, type
-		// how many you want to eat");
+		// System.out.println(currentMonster.getName() + " wants to know how many eyes you want to eat, type how many you want to eat");
 		int consumed = 0;
 		String response = popup.getResponse(currentMonster.getName() + " wants to know how many eyes you want to eat, type how many you want to eat");
-		if (isValidInteger(response))
+		
+		while(!isValidInteger(response))
 		{
-			consumed = Integer.parseInt(response);
+			popup.displayText("Type in a better answer boo");
+			response = popup.getResponse("Type in an integer value");
 		}
-		consumed = Integer.parseInt(response);
+		
+		
+//		if (isValidInteger(response))
+//		{
+			consumed = Integer.parseInt(response);
+//		}
 
 		// int consumed = myScanner.nextInt();
 		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
