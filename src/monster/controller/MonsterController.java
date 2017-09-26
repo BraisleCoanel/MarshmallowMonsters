@@ -13,8 +13,24 @@ public class MonsterController
 	{
 		popup = new MonsterDisplay();
 	}
+	
 	public void start()
 	{
+		int count = 0;
+		while(count < 0)
+		{
+			popup.displayText("am I not friggen coolio!");
+			count+=2;
+		}
+		
+		for(int loop = 0; loop < 10; loop += 1)
+		{
+			
+		}
+		
+		
+		
+		
 		MarshmallowMonster basic = new MarshmallowMonster();
 		// System.out.println(basic);
 		popup.displayText(basic.toString());
@@ -107,7 +123,7 @@ public class MonsterController
 		myScanner.close();
 	}
 
-	// Helper Method
+	// Helper Methods
 	private boolean isValidInteger(String sample)
 	{
 		boolean valid = false;
@@ -119,7 +135,7 @@ public class MonsterController
 		}
 		catch (NumberFormatException error)
 		{
-			popup.displayText("ou need to input an int, " + sample + " is not valid.");
+			popup.displayText("You need to input an int, " + sample + " is not valid.");
 		}
 		return valid;
 	}
@@ -138,21 +154,22 @@ public class MonsterController
 		}
 		return valid;
 	}
-	private boolean isValidBoolean(String sampleBoolean)
-	{
-		boolean valid = false;
-		
-		try
-		{
-			Boolean.parseBoolean(sampleBoolean);
-			valid = true;
-		}
-		catch(NumberFormatException error)
-		{
-			popup.displayText("Type ina boolean value, " + sampleBoolean + " does not count.");
-		}
-		return valid;
-	}
+//	private boolean 
+//
+//	{
+//		boolean valid = false;
+//		
+//		try
+//		{
+//			Boolean.parseBoolean(sampleBoolean);
+//			valid = true;
+//		}
+//		catch(NumberFormatException error)
+//		{
+//			popup.displayText("Type ina boolean value, " + sampleBoolean + " does not count.");
+//		}
+//		return valid;
+//	}
 
 
 
