@@ -2,16 +2,18 @@ package monster.controller;
 
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
-
+import java.util.List;
+import java.util.ArrayList;
 import monster.view.MonsterDisplay;
 
 public class MonsterController
 {
 	private MonsterDisplay popup;
-
+	private List<MarshmallowMonster> monsterList;
 	public MonsterController()
 	{
 		popup = new MonsterDisplay();
+		monsterList = new ArrayList<MarshmallowMonster>();
 	}
 	
 	public void start()
@@ -43,6 +45,9 @@ public class MonsterController
 		// System.out.println(endon);
 		popup.displayText(endon.toString());
 
+		monsterList.add(basic);
+		monsterList.add(endon);
+		
 		interactWithMonster(endon);
 
 	}
@@ -183,7 +188,5 @@ public class MonsterController
 //		}
 //		return valid;
 //	}
-
-
 
 }
