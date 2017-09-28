@@ -52,6 +52,24 @@ public class MonsterController
 
 	}
 
+	private void useList()
+	{
+		for (int index = 0; index < monsterList.size(); index++)
+		{
+			MarshmallowMonster currentMonster = monsterList.get(index);
+			popup.displayText(currentMonster.getName());
+			String updateName = popup.getResponse("What should my new name be?");
+			currentMonster.setName(updateName);
+			popup.displayText("My new name is " + currentMonster.getName());
+		}
+		
+		for (MarshmallowMonster current : monsterList)
+		{
+			
+		}
+		
+		
+	}
 	private void interactWithMonster(MarshmallowMonster currentMonster)
 	{
 		Scanner myScanner = new Scanner(System.in);
