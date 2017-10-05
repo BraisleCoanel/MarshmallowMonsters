@@ -34,15 +34,15 @@ public class MonsterController
 		
 		
 		MarshmallowMonster basic = new MarshmallowMonster();
-		// System.out.println(basic);
+	           	// System.out.println(basic);
 		popup.displayText(basic.toString());
 		MarshmallowMonster endon = new MarshmallowMonster("Endon", 3, 2, .23, true);
-		// System.out.println(endon);
+				// System.out.println(endon);
 		popup.displayText(endon.toString());
-		// System.out.println("I am hungry, I'm go eat one of Endon's arms");
+				// System.out.println("I am hungry, I'm go eat one of Endon's arms");
 		popup.displayText("I am hungry, I'm go eat one of Endon's arms");
 		endon.setArmCount(endon.getArmCount() - 1);	
-		// System.out.println(endon);
+				// System.out.println(endon);
 		popup.displayText(endon.toString());
 
 		monsterList.add(basic);
@@ -65,7 +65,7 @@ public class MonsterController
 		
 		for (MarshmallowMonster current : monsterList)
 		{
-			
+			popup.displayText("My name is " + current.getName());
 		}
 		
 		
